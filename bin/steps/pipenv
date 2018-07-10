@@ -46,6 +46,7 @@ if [ ! "$SKIP_PIPENV_INSTALL" ]; then
         # Install pipenv.
         /app/.heroku/python/bin/pip install pipenv==$PIPENV_VERSION --upgrade &> /dev/null
 
+        puts-step "Installing dependencies current PATH == $PATH"
         # Install the dependencies.
         if [[ ! -f Pipfile.lock ]]; then
             puts-step "Installing dependencies with Pipenv $PIPENV_VERSION…"
